@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedIn from '../icons/LinkedInIcon.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Github from '../icons/GithubIcon.astro';
+import Mail from '../icons/MailIcon.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import ExperienceIcon from '../icons/ExperienceIcon.astro';
+import ProjectIcon from '../icons/ProjectIcon.astro';
+import Projects from '../components/Projects.astro';
+import ProfileIcon from '../icons/ProfileIcon.astro';
+import AboutMe from '../components/AboutMe.astro';
+
+---
+
+<Layout title="Portafolio">
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-20">
+			<img class="rounded-full w-12 h-12 mb-4" src="https://i.postimg.cc/pr4WjTSy/IMG-20230402-WA0012.jpg" alt="foto" >
+		<h1 class="text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, soy Michael 
+			<a href="https://github.com/MichaelTaboada2003"
+			target="_blank"
+			rel="noopener"
+			class="flex justify-center items-center">
+				<Badge>Disponible para trabajar</Badge>
+			</a>
+		</h1>
+		
+		<p class="text-xl lg:text-2xl text-wrap max-w-[700px]"><span class="text-yellow-300/95">Estudiante de la Universidad Tecnológica de Bolívar.</span> 
+			<span class="text-blue-400/95">Futuro Ingeniero de Sistemas y Computación y Científico de Datos.</span>
+			<span class="text-red-400/95">De Cartagena, Bolívar.</span>
+		</p>
+		<nav class="flex gap-4 mt-8 flex-wrap">
+			<SocialPill href="https://www.linkedin.com/in/michael-taboada-naranjo-0263171b1/">
+				<LinkedIn class="size-6"/>
+				LinkedIn
+			</SocialPill>
+			<SocialPill href="https://github.com/MichaelTaboada2003">
+				<Github class="size-6"/>
+				Github
+			</SocialPill>
+			<SocialPill href="mailto:mtaboada@utb.edu.co">
+				<Mail class="size-6"/>
+				mtaboada@utb.edu.co
+			</SocialPill>
+		</nav>
+		
+	</SectionContainer>
+
+	<SectionContainer id="experiencia">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<ExperienceIcon class="size-7"/>
+			Experiencia
+		</h2>
+		<Experience/>
+	</SectionContainer>
+
+	<SectionContainer id="proyectos">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<ProjectIcon class="size-7"/>
+			Proyectos
+		</h2>
+		<Projects/>
+	</SectionContainer>
+	<SectionContainer id="sobre-mi">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<ProfileIcon class="size-7"/>
+			Sobre mí
+		</h2>
+		<AboutMe/>
+	</SectionContainer>
+	</main>
+</Layout>
+

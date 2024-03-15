@@ -1,0 +1,49 @@
+---
+import PythonIcon from '../icons/PythonIcon.astro'
+import HtmlIcon from '../icons/HtmlIcon.astro'
+
+const TAGS = {
+    PYTHON: {
+        name: 'Python',
+        class: 'bg-[#003159]/40 text-white',
+        icon: PythonIcon,
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-[#E34F26]/40 text-white',
+        icon: HtmlIcon,
+    },
+}
+
+const PROJECTS = [
+  {
+    title: 'Catálogos automaticos',
+    description: 'Generador de catálogos automáticos para productos de empresas, con la capacidad de generar un archivo PDF con un diseño personalizado basado en la información dinámica de los productos.',
+    image: 'https://i.postimg.cc/hjJQMZdn/image.png',
+    tags: [TAGS.PYTHON, TAGS.HTML],
+  },
+]
+
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-4 flex-row mb-2">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2 `}>
+                        <tag.icon class="size-6"/>
+                        {tag.name}
+                        </span> 
+                        </li>
+                ))}
+            </ul>
+                <img 
+                class="rounded shadow-2xl shadow-white/30 item-center w-full h-full object-cover mb-4"
+                src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+        </article>
+    ))
+}

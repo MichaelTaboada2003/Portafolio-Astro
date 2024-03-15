@@ -1,0 +1,28 @@
+---
+const EXPERIENCE = [
+    {
+        date: 'Actualmente...',
+        title: 'Estudiante',
+        description: 'Soy un estudiante de Ingeniería de Sistema y Computación de septimo semestre y comencé con Ciencias de Datos en la Universidad Tecnologica de Bolivar mediante una doble titulación. ',
+     
+    },
+    {
+        date: '2021 - Presente',
+        title: 'Aprendiendo',
+        description: 'Conocí la programación poco antes de entrar a la universidad, y desde entonces he estado aprendiendo y practicando. He aprendido mucho sobre desarrollo web, desarrollo de software y algunas cosas curiosas como lo son la manipulación de PDFs.',
+    },
+
+]
+import ExperienceItem from './ExperienceItem.astro'
+---
+<ol class="relative border-s border-gray-200">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+            ))   
+    }
+    
+</ol>
+
