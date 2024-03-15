@@ -16,8 +16,8 @@ import AboutMe from '../components/AboutMe.astro';
 ---
 
 <Layout title="Portafolio">
-	<main class="px-4 sm:container sm:mx-auto sm:px-20 sm:py-15">
-		<SectionContainer class="py-16 md:py-36">
+	<main class="px-4 py-14 md:py-32">
+		<SectionContainer class="mb-24">
 			<div class="flex gap-4 mb-4">
 			<img class="max-w-xl rounded-full shadow-lg size-16" src="https://i.postimg.cc/pr4WjTSy/IMG-20230402-WA0012.jpg" alt="foto" >
 			</div>
@@ -51,7 +51,7 @@ import AboutMe from '../components/AboutMe.astro';
 		
 	</SectionContainer>
 
-	<SectionContainer id="experiencia">
+	<SectionContainer id="experiencia" class="mb-24">
 		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 			<ExperienceIcon class="size-7"/>
 			Experiencia
@@ -59,14 +59,14 @@ import AboutMe from '../components/AboutMe.astro';
 		<Experience/>
 	</SectionContainer>
 
-	<SectionContainer id="proyectos">
+	<SectionContainer id="proyectos" class="mb-24">
 		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 			<ProjectIcon class="size-7"/>
 			Proyectos
 		</h2>
 		<Projects/>
 	</SectionContainer>
-	<SectionContainer id="sobre-mi">
+	<SectionContainer id="sobre-mi" class="mb-24">
 		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 			<ProfileIcon class="size-7"/>
 			Sobre mí
