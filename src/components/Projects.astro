@@ -1,6 +1,8 @@
 ---
 import PythonIcon from '../icons/PythonIcon.astro'
 import HtmlIcon from '../icons/HtmlIcon.astro'
+import LinkButton from '../components/LinkButton.astro'
+import Link from '../icons/Link.astro'
 
 const TAGS = {
     PYTHON: {
@@ -19,15 +21,16 @@ const PROJECTS = [
   {
     title: 'Catálogos automáticos',
     description: 'Generador de catálogos automáticos para productos de empresas, con la capacidad de generar un archivo PDF con un diseño personalizado basado en la información dinámica de los productos.',
-    image: 'https://i.postimg.cc/ydVFjq8S/710shots-so.webp',
+    image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
     tags: [TAGS.PYTHON, TAGS.HTML],
+    link: 'https://github.com/MichaelTaboada2003/Generador-de-Catalogos-Version-Publica'
   },
 ]
 
 ---
 
 {
-    PROJECTS.map(({ image, title, description, tags }) => (
+    PROJECTS.map(({ image, title, description, tags, link }) => (
     <article class="group">
         <div class="w-full md:max-w-lg">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2 w-full md:max-w-lg">{title}</h3>
@@ -48,6 +51,12 @@ const PROJECTS = [
                 <img 
                 class="rounded shadow-xl shadow-white/10 item-center w-full h-auto object-cover transition duration-500 mb-4 sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl " loading="lazy"
                 src={image} alt={`Captura de pantalla del proyecto ${image}`} /></div>
+                {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
 
         </article>
     ))
