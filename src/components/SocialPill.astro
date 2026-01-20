@@ -1,12 +1,73 @@
+---
+const { href, ...rest } = Astro.props;
+---
+
 <a
-    class="rounded-full border border-white/10 
-    flex justify-center items-center
-    py-1 px-2 text-xs lg:text-base
-    gap-x-2 lg:py-2 lg:px-4 bg-white/5 
-    hover:scale-110 hover:bg-white/10 transition"
-    {...Astro.props}
+    class="social-pill"
+    href={href}
     target="_blank"
-    rel="noopener noreferrer">
-    
+    rel="noopener noreferrer"
+    {...rest}
+>
     <slot />
 </a>
+
+<style>
+    .social-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            rgba(255, 255, 255, 0.04) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .social-pill::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(250, 204, 21, 0.15) 0%,
+            rgba(250, 204, 21, 0.05) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .social-pill:hover {
+        transform: translateY(-3px);
+        border-color: rgba(250, 204, 21, 0.35);
+        box-shadow:
+            0 10px 30px -10px rgba(250, 204, 21, 0.2),
+            0 0 0 1px rgba(250, 204, 21, 0.1);
+    }
+
+    .social-pill:hover::before {
+        opacity: 1;
+    }
+
+    .social-pill:active {
+        transform: translateY(-1px);
+    }
+
+    @media (min-width: 1024px) {
+        .social-pill {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+    }
+</style>

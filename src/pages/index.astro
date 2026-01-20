@@ -1,76 +1,295 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import LinkedIn from '../icons/LinkedInIcon.astro';
-import SocialPill from '../components/SocialPill.astro';
-import Github from '../icons/GithubIcon.astro';
-import Mail from '../icons/MailIcon.astro';
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import ExperienceIcon from '../icons/ExperienceIcon.astro';
-import ProjectIcon from '../icons/ProjectIcon.astro';
-import Projects from '../components/Projects.astro';
-import ProfileIcon from '../icons/ProfileIcon.astro';
-import AboutMe from '../components/AboutMe.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedIn from "../icons/LinkedInIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Github from "../icons/GithubIcon.astro";
+import Mail from "../icons/MailIcon.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import ExperienceIcon from "../icons/ExperienceIcon.astro";
+import ProjectIcon from "../icons/ProjectIcon.astro";
+import Projects from "../components/Projects.astro";
+import ProfileIcon from "../icons/ProfileIcon.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout title="Portafolio">
 	<main class="px-4 py-14 md:py-32">
-		<SectionContainer class="mb-24">
-			<div class="flex gap-4 mb-4">
-			<img class="max-w-xl rounded-full shadow-lg size-16" src="https://i.postimg.cc/pr4WjTSy/IMG-20230402-WA0012.jpg" alt="foto" >
+		<SectionContainer class="hero-section mb-24">
+			<!-- Profile Image with Animated Ring -->
+			<div class="hero-image-wrapper">
+				<div class="hero-image-ring"></div>
+				<div class="hero-image-glow"></div>
+				<img
+					class="hero-image"
+					src="./public/yo.jpeg"
+					alt="Michael Taboada - Desarrollador"
+				/>
 			</div>
-			<h1 class="text-white text-3xl tracking-tight sm:text-5xl font-bold flex flex-row gap-x-4 pb-6 sm:pb-10 animate-slideInRight">
-				Hey, soy Michael 
-				<a href="https://github.com/MichaelTaboada2003" target="_blank" rel="noopener" class="flex justify-center items-center">
-				  <Badge>Disponible para trabajar</Badge>
+
+			<!-- Main Heading with Badge -->
+			<div class="hero-heading">
+				<h1 class="hero-title">
+					<span class="hero-greeting">Hey, soy</span>
+					<span class="hero-name">Michael</span>
+				</h1>
+				<a
+					href="https://github.com/MichaelTaboada2003"
+					target="_blank"
+					rel="noopener"
+					class="hero-badge-link"
+				>
+					<Badge>Disponible para trabajar</Badge>
 				</a>
-			  </h1>
-			  
-		
-		<p class="text-xl lg:text-2xl text-wrap max-w-[700px]"><span class="text-yellow-300/95">Estudiante de la Universidad Tecnológica de Bolívar.</span> 
-			<span class="text-blue-400/95">Futuro Ingeniero de Sistemas y Computación y Científico de Datos.</span>
-			<span class="text-red-400/95">De Cartagena, Bolívar.</span>
-		</p>
-		<nav class="flex gap-4 mt-8 flex-wrap">
-			<SocialPill href="https://www.linkedin.com/in/michael-taboada-naranjo-0263171b1/">
-				<LinkedIn class="size-6"/>
-				LinkedIn
-			</SocialPill>
-			<SocialPill href="https://github.com/MichaelTaboada2003">
-				<Github class="size-6"/>
-				Github
-			</SocialPill>
-			<SocialPill href="mailto:mtaboada@utb.edu.co">
-				<Mail class="size-6"/>
-				Correo
-			</SocialPill>
-		</nav>
-	</SectionContainer>
+			</div>
 
-	<SectionContainer id="experiencia" class="mb-24">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-			<ExperienceIcon class="size-7"/>
-			Experiencia
-		</h2>
-		<Experience/>
-	</SectionContainer>
+			<!-- Description with Animated Text -->
+			<p class="hero-description">
+				<span class="hero-text-university"
+					>Estudiante de la Universidad Tecnológica de Bolívar.</span
+				>
+				<span class="hero-text-career"
+					>Futuro Ingeniero de Sistemas y Computación y Científico de
+					Datos.</span
+				>
+				<span class="hero-text-location">De Cartagena, Bolívar.</span>
+			</p>
 
-	<SectionContainer id="proyectos" class="mb-24">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-			<ProjectIcon class="size-7"/>
-			Proyectos
-		</h2>
-		<Projects/>
-	</SectionContainer>
-	<SectionContainer id="sobre-mi" class="mb-24">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-			<ProfileIcon class="size-7"/>
-			Sobre mí
-		</h2>
-		<AboutMe/>
-	</SectionContainer>
+			<!-- Social Links -->
+			<nav class="hero-social-nav">
+				<SocialPill
+					href="https://www.linkedin.com/in/michael-taboada-naranjo-0263171b1/"
+				>
+					<LinkedIn class="size-5" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/MichaelTaboada2003">
+					<Github class="size-5" />
+					Github
+				</SocialPill>
+				<SocialPill href="mailto:mtaboada@utb.edu.co">
+					<Mail class="size-5" />
+					Correo
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<style>
+			/* Hero Image Wrapper */
+			.hero-image-wrapper {
+				position: relative;
+				width: 90px;
+				height: 90px;
+				margin-bottom: 1.75rem;
+			}
+
+			.hero-image {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				object-fit: cover;
+				position: relative;
+				z-index: 2;
+				border: 3px solid rgba(250, 204, 21, 0.4);
+				animation: heroImageFadeIn 0.8s ease-out forwards;
+			}
+
+			.hero-image-ring {
+				position: absolute;
+				inset: -4px;
+				border-radius: 50%;
+				background: conic-gradient(
+					from 0deg,
+					#fcd34d,
+					#fbbf24,
+					#d97706,
+					#fcd34d
+				);
+				z-index: 1;
+				animation: heroRingSpin 8s linear infinite;
+				opacity: 0.7;
+			}
+
+			.hero-image-glow {
+				position: absolute;
+				inset: -12px;
+				border-radius: 50%;
+				background: radial-gradient(
+					circle,
+					rgba(250, 204, 21, 0.25) 0%,
+					transparent 70%
+				);
+				z-index: 0;
+				animation: heroGlowPulse 3s ease-in-out infinite;
+			}
+
+			@keyframes heroRingSpin {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes heroGlowPulse {
+				0%,
+				100% {
+					opacity: 0.4;
+					transform: scale(1);
+				}
+				50% {
+					opacity: 0.7;
+					transform: scale(1.1);
+				}
+			}
+
+			@keyframes heroImageFadeIn {
+				from {
+					opacity: 0;
+					transform: scale(0.9);
+				}
+				to {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			/* Heading Styles */
+			.hero-heading {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 1.5rem;
+				animation: heroSlideUp 0.7s ease-out 0.2s both;
+			}
+
+			.hero-title {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: baseline;
+				gap: 0.5rem;
+				font-size: 2rem;
+				font-weight: 800;
+				letter-spacing: -0.03em;
+				line-height: 1.2;
+			}
+
+			.hero-greeting {
+				color: rgba(255, 255, 255, 0.85);
+			}
+
+			.hero-name {
+				background: linear-gradient(
+					135deg,
+					#fde047 0%,
+					#fbbf24 50%,
+					#fffbeb 100%
+				);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.hero-badge-link {
+				display: inline-flex;
+				align-items: center;
+				transition: transform 0.3s ease;
+			}
+
+			.hero-badge-link:hover {
+				transform: scale(1.05);
+			}
+
+			@media (min-width: 640px) {
+				.hero-title {
+					font-size: 3.25rem;
+				}
+				.hero-image-wrapper {
+					width: 100px;
+					height: 100px;
+				}
+			}
+
+			@keyframes heroSlideUp {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			/* Description Styles */
+			.hero-description {
+				font-size: 1.15rem;
+				line-height: 1.8;
+				max-width: 680px;
+				animation: heroSlideUp 0.7s ease-out 0.4s both;
+			}
+
+			.hero-text-university {
+				background: linear-gradient(135deg, #fde047 0%, #fbbf24 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				font-weight: 500;
+			}
+
+			.hero-text-career {
+				color: rgba(96, 165, 250, 0.95);
+				font-weight: 500;
+				font-style: italic;
+			}
+
+			.hero-text-location {
+				color: rgba(248, 113, 113, 0.95);
+				font-weight: 500;
+			}
+
+			@media (min-width: 1024px) {
+				.hero-description {
+					font-size: 1.35rem;
+				}
+			}
+
+			/* Social Navigation */
+			.hero-social-nav {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin-top: 2rem;
+				animation: heroSlideUp 0.7s ease-out 0.6s both;
+			}
+		</style>
+
+		<SectionContainer id="experiencia" class="mb-24">
+			<h2
+				class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white"
+			>
+				<ExperienceIcon class="size-7" />
+				Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos" class="mb-24">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ProjectIcon class="size-7" />
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+		<SectionContainer id="sobre-mi" class="mb-24">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ProfileIcon class="size-7" />
+				Sobre mí
+			</h2>
+			<AboutMe />
+		</SectionContainer>
 	</main>
 </Layout>
-

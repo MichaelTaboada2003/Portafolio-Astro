@@ -1,28 +1,64 @@
 ---
 const EXPERIENCE = [
     {
-        date: 'Actualmente...',
-        title: 'Estudiante',
-        description: 'Soy un estudiante de Ingeniería de Sistema y Computación de septimo semestre y comencé con Ciencias de Datos en la Universidad Tecnologica de Bolivar mediante una doble titulación. ',
-     
+        date: "Actualmente...",
+        title: "Estudiante de Ingeniería",
+        company: "Universidad Tecnológica de Bolívar",
+        description:
+            "Estudiante de Ingeniería de Sistemas y Computación de séptimo semestre. Comencé doble titulación en Ciencias de Datos. Desarrollo de proyectos académicos y personales enfocados en desarrollo web y análisis de datos.",
+        link: "https://www.utb.edu.co",
     },
     {
-        date: '2021 - Presente',
-        title: 'Aprendiendo',
-        description: 'Conocí la programación poco antes de entrar a la universidad, y desde entonces he estado aprendiendo y practicando. He aprendido mucho sobre desarrollo web, desarrollo de software y algunas cosas curiosas como lo son la manipulación de PDFs.',
+        date: "Enero 2021 - Presente",
+        title: "Desarrollador Full Stack",
+        company: "Proyectos Personales",
+        description:
+            "Desarrollo de aplicaciones web utilizando tecnologías modernas como React, Next.js, Astro y Node.js. Implementación de bases de datos con PostgreSQL y Supabase. Creación de interfaces de usuario dinámicas y responsivas.",
     },
-
-]
-import ExperienceItem from './ExperienceItem.astro'
+    {
+        date: "Agosto 2023",
+        title: "Científico de Datos Jr.",
+        company: "Proyectos Académicos",
+        description:
+            "Análisis de datos y machine learning aplicado a problemas reales. Uso de Python, Pandas, NumPy y scikit-learn para procesamiento y modelado de datos. Visualización de datos con matplotlib y seaborn.",
+    },
+];
+import ExperienceItem from "./ExperienceItem.astro";
 ---
-<ol class="relative border-s border-gray-200">
-    {
-        EXPERIENCE.map((experience) => (
-            <li>
-                <ExperienceItem {...experience} />
-            </li>
-            ))   
-    }
-    
-</ol>
 
+<div class="experience-wrapper">
+    <ol class="experience-timeline">
+        {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+    </ol>
+</div>
+
+<style>
+    .experience-wrapper {
+        position: relative;
+        padding-left: 0.5rem;
+    }
+
+    .experience-timeline {
+        position: relative;
+        margin-left: 0.5rem;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    /* Timeline Line with Gradient */
+    .experience-timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        bottom: 2rem;
+        width: 2px;
+        background: linear-gradient(
+            180deg,
+            rgba(251, 191, 36, 0.5) 0%,
+            rgba(251, 191, 36, 0.2) 50%,
+            rgba(75, 85, 99, 0.2) 100%
+        );
+        border-radius: 2px;
+    }
+</style>
