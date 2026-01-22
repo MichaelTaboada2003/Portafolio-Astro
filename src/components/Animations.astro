@@ -1,0 +1,175 @@
+---
+
+---
+
+<script>
+    import Lenis from "lenis";
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    // Registrar ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Respetar preferencias de movimiento reducido
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!prefersReducedMotion) {
+        // Inicializar Lenis para scroll suave
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: "vertical",
+            smoothWheel: true,
+        });
+
+        // Integrar Lenis con GSAP ScrollTrigger
+        lenis.on("scroll", ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+
+        gsap.ticker.lagSmoothing(0);
+
+        // Animación del Hero - texto principal
+        gsap.fromTo(
+            ".hero-title",
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+                delay: 0.2,
+            },
+        );
+
+        gsap.fromTo(
+            ".hero-subtitle",
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                delay: 0.5,
+            },
+        );
+
+        gsap.fromTo(
+            ".hero-social-nav",
+            { opacity: 0, y: 20 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power3.out",
+                delay: 0.8,
+            },
+        );
+
+        // Animación de secciones al hacer scroll
+        gsap.utils.toArray(".section-animate").forEach((section: any) => {
+            gsap.fromTo(
+                section,
+                { opacity: 0, y: 60 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 85%",
+                        end: "top 50%",
+                        toggleActions: "play none none reverse",
+                    },
+                },
+            );
+        });
+
+        // Animación de cards de proyectos
+        gsap.utils
+            .toArray(".project-card")
+            .forEach((card: any, index: number) => {
+                gsap.fromTo(
+                    card,
+                    { opacity: 0, y: 40, scale: 0.95 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.6,
+                        ease: "power2.out",
+                        delay: index * 0.1,
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 90%",
+                            toggleActions: "play none none none",
+                        },
+                    },
+                );
+            });
+
+        // Animación de items de experiencia
+        gsap.utils
+            .toArray(".experience-item")
+            .forEach((item: any, index: number) => {
+                gsap.fromTo(
+                    item,
+                    { opacity: 0, x: -30 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        duration: 0.5,
+                        ease: "power2.out",
+                        delay: index * 0.15,
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 85%",
+                            toggleActions: "play none none none",
+                        },
+                    },
+                );
+            });
+
+        // Animación de la línea del timeline
+        gsap.fromTo(
+            ".experience-timeline::before",
+            { scaleY: 0 },
+            {
+                scaleY: 1,
+                duration: 1.5,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".experience-timeline",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                },
+            },
+        );
+
+        // Animación de tags con stagger
+        gsap.utils.toArray(".project-tags").forEach((tagGroup: any) => {
+            const tags = tagGroup.querySelectorAll("li");
+            gsap.fromTo(
+                tags,
+                { opacity: 0, scale: 0.8 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.3,
+                    stagger: 0.05,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: tagGroup,
+                        start: "top 90%",
+                        toggleActions: "play none none none",
+                    },
+                },
+            );
+        });
+    }
+</script>
