@@ -136,15 +136,15 @@ export interface Project {
 export const PROJECTS: Project[] = [
     {
         title: 'Networking App',
-        description: 'Aplicación web para gestión de contactos profesionales y networking. Incluye autenticación de usuarios, gestión de perfiles, dashboard personalizado y exportación de datos. Desarrollada con arquitectura moderna y diseño responsivo.',
+        description: 'Aplicación web para gestión de contactos profesionales y networking. Incluye autenticación de usuarios, gestión de perfiles, dashboard personalizado y exportación de datos. Con +55 usuarios',
         image: '/networking.png',
         tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.GROQ],
-        github: 'https://github.com/MichaelTaboada2003/networking',
+        preview: 'https://networking-livid.vercel.app/',
         featured: true
     },
     {
         title: 'Exosky - NASA Space Apps 2024',
-        description: 'Aplicación interactiva desarrollada para el NASA Space Apps Challenge 2024. Permite explorar y visualizar exoplanetas descubiertos, con información detallada y visualización 3D del cielo desde estos mundos distantes.',
+        description: 'Aplicación interactiva desarrollada para el NASA Space Apps Challenge 2024. Permite explorar y visualizar exoplanetas mediante un modelo de Machine Learning, con información detallada y visualización 3D del cielo desde estos mundos distantes.',
         image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
         tags: [TAGS.REACT, TAGS.THREEJS, TAGS.PYTHON, TAGS.TAILWIND],
         github: 'https://github.com/MichaelTaboada2003/Exosky-Nasa-Space-App-2024',
@@ -170,6 +170,7 @@ export const PROJECTS: Project[] = [
         image: '/AWorldAway.png',
         tags: [TAGS.PYTHON, TAGS.VUE, TAGS.THREEJS, TAGS.GROQ],
         github: 'https://github.com/MichaelTaboada2003/AWorldAway_Nasa2025',
+        preview: 'https://a-world-away-nasa2025-web.vercel.app/es-ES',
         featured: true
     },
     {
