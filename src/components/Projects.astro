@@ -93,6 +93,9 @@ const FEATURED_PROJECTS = getFeaturedProjects();
     /* Image Section */
     .project-image-container {
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .image-link {
@@ -114,9 +117,11 @@ const FEATURED_PROJECTS = getFeaturedProjects();
 
     .project-image {
         width: 100%;
-        height: auto;
+        max-height: 320px;
+        object-fit: contain;
         display: block;
         transition: transform 0.4s ease;
+        background: rgba(0, 0, 0, 0.2);
     }
 
     .image-link:hover .project-image {

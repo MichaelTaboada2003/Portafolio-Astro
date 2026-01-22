@@ -11,6 +11,9 @@ import CssIcon from '../icons/CssIcon.astro';
 import ExpoIcon from '../icons/ExpoIcon.astro';
 import ThreejsIcon from '../icons/ThreejsIcon.astro';
 import NodejsIcon from '../icons/NodejsIcon.astro';
+import SupabaseIcon from '../icons/SupabaseIcon.astro';
+import GroqIcon from '../icons/GroqIcon.astro';
+import VueIcon from '../icons/VueIcon.astro';
 
 export const TAGS = {
     PYTHON: {
@@ -48,6 +51,11 @@ export const TAGS = {
         class: 'bg-[#61DAFB]/25 text-[#61DAFB]',
         icon: ReactIcon,
     },
+    VUE: {
+        name: 'Vue.js',
+        class: 'bg-[#4FC08D]/25 text-[#4FC08D]',
+        icon: VueIcon,
+    },
     NEXTJS: {
         name: 'Next.js',
         class: 'bg-white/15 text-white',
@@ -67,6 +75,16 @@ export const TAGS = {
         name: 'Tailwind CSS',
         class: 'bg-[#06B6D4]/25 text-[#06B6D4]',
         icon: TailwindIcon,
+    },
+    SUPABASE: {
+        name: 'Supabase',
+        class: 'bg-[#3ECF8E]/25 text-[#3ECF8E]',
+        icon: SupabaseIcon,
+    },
+    GROQ: {
+        name: 'Groq',
+        class: 'bg-[#F54F35]/25 text-[#F54F35]',
+        icon: GroqIcon,
     },
     MYSQL: {
         name: 'MySQL',
@@ -117,17 +135,24 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
     {
+        title: 'Networking App',
+        description: 'Aplicación web para gestión de contactos profesionales y networking. Incluye autenticación de usuarios, gestión de perfiles, dashboard personalizado y exportación de datos. Desarrollada con arquitectura moderna y diseño responsivo.',
+        image: '/networking.png',
+        tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.GROQ],
+        github: 'https://github.com/MichaelTaboada2003/networking',
+        featured: true
+    },
+    {
         title: 'Exosky - NASA Space Apps 2024',
         description: 'Aplicación interactiva desarrollada para el NASA Space Apps Challenge 2024. Permite explorar y visualizar exoplanetas descubiertos, con información detallada y visualización 3D del cielo desde estos mundos distantes.',
         image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
         tags: [TAGS.REACT, TAGS.THREEJS, TAGS.PYTHON, TAGS.TAILWIND],
         github: 'https://github.com/MichaelTaboada2003/Exosky-Nasa-Space-App-2024',
-        featured: true
     },
     {
         title: 'Gym Tracker',
         description: 'Aplicación móvil para seguimiento de entrenamientos en el gimnasio. Permite registrar ejercicios, series, repeticiones y peso. Incluye estadísticas de progreso y visualización de datos.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
+        image: '/gym-tracker.png',
         tags: [TAGS.REACT_NATIVE, TAGS.EXPO, TAGS.TYPESCRIPT],
         github: 'https://github.com/MichaelTaboada2003/gym-tracker',
         featured: true
@@ -138,14 +163,14 @@ export const PROJECTS: Project[] = [
         image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
         tags: [TAGS.PYTHON, TAGS.HTML],
         github: 'https://github.com/MichaelTaboada2003/Generador-de-Catalogos-Version-Publica',
-        featured: true
     },
     {
         title: 'A World Away - NASA 2025',
-        description: 'Proyecto desarrollado para el NASA Space Apps Challenge 2025. Exploración de mundos lejanos y visualización de datos astronómicos.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+        description: 'Proyecto desarrollado para el NASA Space Apps Challenge 2025. Exploración de mundos lejanos y visualización de datos astronómicos con IA.',
+        image: '/AWorldAway.png',
+        tags: [TAGS.PYTHON, TAGS.VUE, TAGS.THREEJS, TAGS.GROQ],
         github: 'https://github.com/MichaelTaboada2003/AWorldAway_Nasa2025',
+        featured: true
     },
     {
         title: 'NASA 2025 Blog',
