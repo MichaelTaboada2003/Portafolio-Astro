@@ -86,31 +86,6 @@ export const TAGS = {
         class: 'bg-[#F54F35]/25 text-[#F54F35]',
         icon: GroqIcon,
     },
-    MYSQL: {
-        name: 'MySQL',
-        class: 'bg-[#4479A1]/25 text-[#4479A1]',
-        icon: null,
-    },
-    POSTGRESQL: {
-        name: 'PostgreSQL',
-        class: 'bg-[#4169E1]/25 text-[#4169E1]',
-        icon: null,
-    },
-    DOCKER: {
-        name: 'Docker',
-        class: 'bg-[#2496ED]/25 text-[#2496ED]',
-        icon: null,
-    },
-    TERRAFORM: {
-        name: 'Terraform',
-        class: 'bg-[#7B42BC]/25 text-[#7B42BC]',
-        icon: null,
-    },
-    AWS: {
-        name: 'AWS',
-        class: 'bg-[#FF9900]/25 text-[#FF9900]',
-        icon: null,
-    },
     THREEJS: {
         name: 'Three.js',
         class: 'bg-white/15 text-white',
@@ -135,92 +110,53 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
     {
+        title: 'Shainy',
+        description: 'Plataforma e-commerce Full-Stack para gestión de catálogos y ventas. Incluye sincronización en tiempo real con Google Sheets, panel de administración con Supabase y checkout dinámico para WhatsApp.',
+        image: '/shainy.png',
+        tags: [TAGS.NEXTJS, TAGS.SUPABASE, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+        preview: 'https://shainy.vercel.app/',
+        featured: true
+    },
+    {
         title: 'Networking App',
-        description: 'Aplicación web para gestión de contactos profesionales y networking. Incluye autenticación de usuarios, gestión de perfiles, dashboard personalizado y exportación de datos. Con +55 usuarios',
+        description: 'Aplicación web para gestión de contactos profesionales y networking. Incluye autenticación de usuarios, gestión de perfiles e inteligencia artificial para optimizar conexiones comerciales.',
         image: '/networking.png',
         tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.GROQ],
         preview: 'https://networking-livid.vercel.app/',
         featured: true
     },
     {
-        title: 'Exosky - NASA Space Apps 2024',
-        description: 'Aplicación interactiva desarrollada para el NASA Space Apps Challenge 2024. Permite explorar y visualizar exoplanetas mediante un modelo de Machine Learning, con información detallada y visualización 3D del cielo desde estos mundos distantes.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.REACT, TAGS.THREEJS, TAGS.PYTHON, TAGS.TAILWIND],
-        github: 'https://github.com/MichaelTaboada2003/Exosky-Nasa-Space-App-2024',
-    },
-    {
         title: 'Gym Tracker',
-        description: 'Aplicación móvil para seguimiento de entrenamientos en el gimnasio. Permite registrar ejercicios, series, repeticiones y peso. Incluye estadísticas de progreso y visualización de datos.',
+        description: 'Aplicación móvil de alto rendimiento para el seguimiento de rutinas de gimnasio. Permite el registro detallado de ejercicios, análisis de progreso y gestión de historial de entrenamiento.',
         image: '/gym-tracker.png',
         tags: [TAGS.REACT_NATIVE, TAGS.EXPO, TAGS.TYPESCRIPT],
         github: 'https://github.com/MichaelTaboada2003/gym-tracker',
         featured: true
     },
     {
-        title: 'Catálogos Automáticos',
-        description: 'Generador de catálogos automáticos para productos de empresas, con la capacidad de generar un archivo PDF con un diseño personalizado basado en la información dinámica de los productos.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.PYTHON, TAGS.HTML],
-        github: 'https://github.com/MichaelTaboada2003/Generador-de-Catalogos-Version-Publica',
+        title: 'Exosky-Nasa-Space-App-2024',
+        description: 'Visualizador astronómico interactivo que permite ver el cielo nocturno desde la superficie de otros planetas. Ganador local en el NASA Space Apps Challenge 2024.',
+        image: '/exosky.png',
+        tags: [TAGS.REACT, TAGS.PYTHON, TAGS.THREEJS, TAGS.TAILWIND],
+        github: 'https://github.com/MichaelTaboada2003/Exosky-Nasa-Space-App-2024',
+        featured: true
     },
     {
-        title: 'A World Away - NASA 2025',
-        description: 'Proyecto desarrollado para el NASA Space Apps Challenge 2025. Exploración de mundos lejanos y visualización de datos astronómicos con IA.',
+        title: 'AWorldAway_Nasa2025',
+        description: 'Proyecto avanzado para el NASA Space Apps Challenge 2025 enfocado en la exploración exoplanetaria y visualización científica mediante modelos de datos masivos y 3D.',
         image: '/AWorldAway.png',
-        tags: [TAGS.PYTHON, TAGS.VUE, TAGS.THREEJS, TAGS.GROQ],
+        tags: [TAGS.VUE, TAGS.PYTHON, TAGS.THREEJS, TAGS.GROQ],
         github: 'https://github.com/MichaelTaboada2003/AWorldAway_Nasa2025',
         preview: 'https://a-world-away-nasa2025-web.vercel.app/es-ES',
         featured: true
     },
     {
-        title: 'NASA 2025 Blog',
-        description: 'Blog informativo sobre astronomía y exploración espacial, creado como complemento del proyecto NASA Space Apps 2025.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND],
-        github: 'https://github.com/MichaelTaboada2003/NASA-2025-BLOG',
-    },
-    {
-        title: 'Landing E-commerce',
-        description: 'Landing page moderna para e-commerce con diseño responsive y optimizado para conversiones.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-        github: 'https://github.com/MichaelTaboada2003/Landing-e-commerce',
-    },
-    {
-        title: 'Reproductor Musical',
-        description: 'Reproductor de música web con interfaz moderna, controles de reproducción y lista de canciones.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-        github: 'https://github.com/MichaelTaboada2003/Reproductor-musical',
-    },
-    {
-        title: 'Infrastructure as Code - Node.js',
-        description: 'Infraestructura como código para desplegar aplicaciones Node.js con Express y MySQL usando Terraform y Docker.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.TERRAFORM, TAGS.DOCKER, TAGS.NODEJS, TAGS.MYSQL],
-        github: 'https://github.com/MichaelTaboada2003/IaaC-nodejs-express-mysql',
-    },
-    {
-        title: 'LIAV Infrastructure',
-        description: 'Proyecto de infraestructura cloud con automatización y despliegue continuo.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.TERRAFORM, TAGS.AWS, TAGS.DOCKER],
-        github: 'https://github.com/MichaelTaboada2003/liav-infraestructure',
-    },
-    {
-        title: 'Teoría de Colas',
-        description: 'Simulador de teoría de colas para análisis de sistemas de espera y optimización de servicios.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.PYTHON],
-        github: 'https://github.com/MichaelTaboada2003/Teoria-de-colas',
-    },
-    {
-        title: 'Interfaz de Software',
-        description: 'Proyecto académico de diseño e implementación de interfaces de usuario.',
-        image: 'https://i.postimg.cc/0y0QbD59/928shots-so.webp',
-        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-        github: 'https://github.com/MichaelTaboada2003/Intefaz-de-Software',
+        title: 'Novenas2025',
+        description: 'Aplicación web moderna dedicada a la festividad de las Novenas, integrando gestión de contenido dinámico y una interfaz intuitiva para el seguimiento de oraciones.',
+        image: '/novenas.png',
+        tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+        github: 'https://github.com/MichaelTaboada2003/novenas-app',
+        featured: true
     },
 ]
 
